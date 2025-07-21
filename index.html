@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaga Exclusiva: Coordenação de Avaliação e Monitoramento - Organização 123</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Fundo cinza claro */
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px; /* Largura um pouco maior para a landing page */
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .hero-section {
+            background-color: #1a73e8; /* Azul vibrante para o banner */
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            background-image: url('https://placehold.co/1200x400/1a73e8/ffffff?text=Banner+Oportunidade+Ensina+Brasil'); /* Placeholder para banner dinâmico */
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem; /* Título de impacto */
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            background-color: #28a745; /* Verde para CTA principal */
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px; /* Botão arredondado */
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        }
+        .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+        }
+        .module-section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .module-section:last-child {
+            border-bottom: none;
+        }
+        .module-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .accordion-header {
+            background-color: #e0f2fe; /* Azul claro para cabeçalhos */
+            color: #007bff; /* Azul mais escuro para texto */
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #cce7ff;
+        }
+        .accordion-content {
+            padding: 1rem 1.5rem;
+            background-color: #f8fafd; /* Azul muito claro para conteúdo */
+            border-radius: 8px;
+            margin-top: -0.5rem; /* Sobrepor com o cabeçalho para um visual suave */
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            opacity: 0; /* Começa invisível */
+            transform: translateY(-10px); /* Começa um pouco acima */
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.3s ease-in, transform 0.3s ease-in;
+        }
+        .accordion-content.active {
+            max-height: 1000px; /* Ajustar conforme necessário para o comprimento do conteúdo */
+            padding: 1rem 1.5rem;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        .arrow.rotate {
+            transform: rotate(90deg);
+        }
+        .profile-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .profile-column {
+            flex: 1 1 calc(50% - 0.75rem); /* Duas colunas em desktop, uma em mobile */
+            min-width: 300px; /* Garante que não fiquem muito estreitas */
+        }
+        .team-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .team-member {
+            text-align: center;
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1a73e8;
+        }
+        .team-member p {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .deadline-highlight {
+            background-color: #ffeb3b; /* Amarelo para destaque */
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .google-forms-embed {
+            width: 100%;
+            height: 800px; /* Altura ajustável para o formulário */
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container">
+        <!-- Módulo 1: A Chamada Principal -->
+        <section id="top" class="hero-section">
+            <h1 class="text-white">Seja a próxima liderança a transformar a educação em Municupolândia.</h1>
+            <p class="text-white">Vaga exclusiva para alumni Ensina Brasil: Coordenação de Avaliação e Monitoramento na Organização 123.</p>
+            <a href="#formulario-inscricao" class="cta-button no-underline">QUERO LIDERAR ESSA MUDANÇA</a>
+        </section>
+
+        <!-- Módulo 2: O Vídeo de Engajamento -->
+        <section class="module-section">
+            <h2 class="module-title">Uma mensagem direta da nossa equipe para você, alumni.</h2>
+            <div class="video-container">
+                <!-- Substitua o src pelo link do seu vídeo do YouTube -->
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_DO_SEU_VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Módulo 3: O Painel Interativo (O Coração da Página) -->
+        <section class="module-section">
+            <h2 class="module-title">Explore os Detalhes da Oportunidade</h2>
+            <div class="space-y-4">
+                <!-- O Desafio em Detalhes -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ O Desafio em Detalhes</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Esta não é apenas uma vaga, é uma missão. Você será a pessoa responsável por traduzir dados complexos em estratégias pedagógicas claras e acionáveis, que impactarão diretamente a aprendizagem de milhares de alunos na rede pública de Municípolândia.</p>
+                        <p class="mt-2">Sua atuação será crucial na gestão de projetos de avaliação e monitoramento, liderando uma equipe dedicada e articulando-se com as escolas para garantir que as informações se transformem em melhorias concretas. Buscamos alguém que veja além dos números, que entenda as realidades do chão da escola e que esteja pronto(a) para ser um(a) agente de transformação.</p>
+                    </div>
+                </div>
+
+                <!-- Conheça a Organização 123 -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Conheça a Organização 123</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="font-semibold">Nossa Missão:</p>
+                        <p>Promover a equidade e a excelência na educação pública, garantindo que cada aluno tenha acesso a um ensino de qualidade.</p>
+                        <p class="font-semibold mt-4">Nosso Impacto:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>**+15.000 alunos** impactados diretamente em Municípolândia.</li>
+                            <li>**+50 escolas** parceiras com melhorias em indicadores de aprendizagem.</li>
+                            <li>**+100% de crescimento** em projetos de avaliação nos últimos 2 anos.</li>
+                        </ul>
+                        <p class="font-semibold mt-4">Conheça a Equipe:</p>
+                        <div class="team-photos">
+                            <div class="team-member">
+                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 1">
+                                <p>Ana Silva<br>Gerente Pedagógica</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 2">
+                                <p>Bruno Costa<br>Especialista em Dados</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 3">
+                                <p>Carla Dias<br>Analista de Projetos</p>
+                            </div>
+                            <!-- Adicione mais membros conforme necessário -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Perfil que Buscamos -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ O Perfil que Buscamos (Sem "check-list")</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="profile-columns">
+                            <div class="profile-column">
+                                <h3 class="font-bold text-lg mb-2 text-blue-700">Suas Ferramentas:</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>Licenciatura completa.</li>
+                                    <li>Experiência comprovada com gestão de pessoas e liderança de equipes.</li>
+                                    <li>Familiaridade e experiência com processos de avaliação educacional ou análise de dados.</li>
+                                    <li>Habilidade para transformar dados em insights e ações.</li>
+                                </ul>
+                            </div>
+                            <div class="profile-column">
+                                <h3 class="font-bold text-lg mb-2 text-blue-700">Sua Visão de Mundo:</h3>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>Compromisso inegociável com a equidade e a educação pública de qualidade.</li>
+                                    <li>Pensamento crítico aguçado e foco em resultados.</li>
+                                    <li>Habilidade de articulação e comunicação eficaz com diferentes áreas e stakeholders.</li>
+                                    <li>Proatividade e capacidade de adaptação a desafios.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 4: FAQ Dinâmico -->
+        <section class="module-section">
+            <h2 class="module-title">Dúvidas Frequentes</h2>
+            <div class="space-y-4">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Quais os maiores desafios da posição no primeiro ano?</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>No primeiro ano, os principais desafios incluem aprofundar o entendimento dos nossos projetos atuais, otimizar processos de coleta e análise de dados, e fortalecer a articulação com as equipes pedagógicas para garantir que as avaliações se traduzam em ações eficazes nas escolas.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Como é a rotina de visitas às escolas?</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>As visitas às escolas são planejadas e ocorrem periodicamente, conforme a necessidade dos projetos e o cronograma da equipe. Elas são essenciais para entender as realidades locais, coletar feedback e garantir a implementação das estratégias pedagógicas.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Quais as ferramentas de análise de dados mais usadas?</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Utilizamos uma combinação de ferramentas, incluindo planilhas avançadas (Google Sheets), softwares de visualização de dados (como Power BI ou Tableau, dependendo do projeto) e sistemas internos de gestão educacional. Familiaridade com SQL ou Python para análise de dados é um diferencial.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Existe plano de desenvolvimento de carreira?</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim! A Organização 123 investe no desenvolvimento de seus colaboradores. Oferecemos programas de mentoria, acesso a cursos e workshops, e oportunidades de crescimento dentro da organização, alinhados aos objetivos de carreira de cada um.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>▶️ Qual a faixa salarial e pacote de benefícios?</span>
+                        <span class="arrow text-xl">▶</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>A faixa salarial para esta posição é competitiva e será discutida em detalhes com os candidatos selecionados para as etapas finais do processo. Nosso pacote de benefícios inclui [Ex: plano de saúde, vale-refeição, seguro de vida, auxílio transporte, etc. - *Adicione aqui os benefícios reais se souber*].</p>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <p class="text-lg font-semibold">Não encontrou sua dúvida?</p>
+                    <a href="mailto:[seu-email-de-contato@ensinabrasil.org]?subject=Dúvida%20Vaga%20Coordenação%20Avaliação%20Organização%20123" class="cta-button bg-blue-600 hover:bg-blue-700 no-underline">
+                        CLIQUE AQUI E FALE CONOSCO
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 5: Chamada Final para Ação -->
+        <section id="formulario-inscricao" class="module-section text-center">
+            <h2 class="module-title">Sua Contribuição Faz a Diferença!</h2>
+            <p class="text-lg text-gray-700 mb-4">
+                Buscamos ativamente construir um setor público com a cara do Brasil. Candidaturas de **pessoas negras e indígenas são especialmente bem-vindas** para esta posição de liderança.
+            </p>
+            <div class="deadline-highlight mb-8">
+                Inscrições se encerram em [Data Limite: DD/MM/AAAA]!
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Preencha o Formulário de Inscrição Abaixo:</h3>
+            <!-- Incorporar o Google Forms aqui -->
+            <iframe src="[LINK_DO_SEU_GOOGLE_FORMS_PARA_EMBUTIR]" class="google-forms-embed" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-8 py-4 border-t border-gray-200">
+            <p>&copy; Ensina Brasil - Ecossistema & Lideranças</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrow.classList.remove('rotate');
+            } else {
+                // Fechar todos os outros acordeões abertos
+                document.querySelectorAll('.accordion-content.active').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.arrow').classList.remove('rotate');
+                });
+                // Abrir o acordeão clicado
+                content.classList.add('active');
+                arrow.classList.add('rotate');
+            }
+        }
+
+        // Smooth scroll para o formulário
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
