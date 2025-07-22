@@ -4,75 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaga Exclusiva: Coordenação de Avaliação e Monitoramento - Organização 123</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Fundo cinza claro */
-            color: #333;
+            background-color: #f0f2f5; /* Fundo cinza suave */
+            color: #343a40; /* Texto mais escuro para contraste */
             line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden; /* Evita rolagem horizontal */
         }
         .container {
-            max-width: 960px; /* Largura um pouco maior para a landing page */
-            margin: 2rem auto;
-            padding: 2rem;
+            max-width: 1024px;
+            margin: 2.5rem auto; /* Mais margem superior/inferior */
+            padding: 3rem; /* Mais padding */
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 20px; /* Cantos mais arredondados */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada e suave */
+            position: relative;
+            z-index: 1; /* Garante que o container esteja acima de elementos de fundo */
         }
         .hero-section {
-            background-color: #1a73e8; /* Azul vibrante para o banner */
+            background: linear-gradient(135deg, #1a73e8 0%, #0056b3 100%); /* Gradiente diagonal mais dinâmico */
             color: white;
-            padding: 4rem 2rem;
-            border-radius: 12px;
+            padding: 6rem 2rem; /* Mais padding */
+            border-radius: 20px;
             text-align: center;
-            margin-bottom: 2rem;
-            background-image: url('https://placehold.co/1200x400/1a73e8/ffffff?text=Banner+Oportunidade+Ensina+Brasil'); /* Placeholder para banner dinâmico */
-            background-size: cover;
-            background-position: center;
+            margin-bottom: 3.5rem; /* Mais espaço abaixo */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra para o hero */
+            /* Imagem de fundo opcional, descomente e substitua a URL se tiver uma */
+            /* background-image: url('https://placehold.co/1200x400/1a73e8/ffffff?text=Sua+Imagem+de+Capa'); */
+            /* background-size: cover; */
+            /* background-position: center; */
+        }
+        /* Efeito de sobreposição de padrão no hero */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="%23ffffff" opacity="0.08"/><circle cx="20" cy="80" r="15" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="20" r="25" fill="%23ffffff" opacity="0.06"/></svg>') repeat; /* Padrão de círculos mais variado */
+            opacity: 0.2; /* Mais visível */
+            pointer-events: none;
         }
         .hero-section h1 {
-            font-size: 3.5rem; /* Título de impacto */
+            font-family: 'Anton', sans-serif;
+            font-size: 4.5rem; /* Título ainda maior */
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1.8rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5); /* Sombra de texto mais forte */
         }
         .hero-section p {
-            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem; /* Subtítulo maior */
             font-weight: 500;
-            margin-bottom: 2rem;
+            margin-bottom: 3.5rem;
         }
         .cta-button {
-            background-color: #28a745; /* Verde para CTA principal */
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px; /* Botão arredondado */
+            background-color: #ffc107; /* Amarelo para CTA principal */
+            color: #343a40; /* Texto escuro para contraste no amarelo */
+            padding: 1.8rem 3.5rem; /* Botão ainda maior */
+            border-radius: 50px;
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.6rem; /* Texto maior no botão */
             text-align: center;
             display: inline-block;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5); /* Sombra amarela mais forte */
+            text-decoration: none;
+            border: 2px solid transparent; /* Borda para efeito hover */
         }
         .cta-button:hover {
-            background-color: #218838;
-            transform: translateY(-3px);
+            background-color: #e0a800; /* Amarelo mais escuro no hover */
+            transform: translateY(-7px) scale(1.02); /* Efeito de elevação e leve escala */
+            box-shadow: 0 12px 35px rgba(255, 193, 7, 0.7); /* Sombra amarela mais intensa */
+            border-color: #fff; /* Borda branca no hover */
         }
         .module-section {
-            padding: 2rem 0;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 4rem 0; /* Mais padding entre seções */
+            border-bottom: 1px solid #e9ecef;
         }
         .module-section:last-child {
             border-bottom: none;
         }
         .module-title {
-            font-size: 2.25rem;
+            font-size: 3rem; /* Título de módulo maior */
             font-weight: 700;
             color: #1a73e8;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .module-title::after {
+            content: '';
+            display: block;
+            width: 100px; /* Linha mais larga */
+            height: 5px; /* Linha mais grossa */
+            background-color: #28a745;
+            margin: 15px auto 0;
+            border-radius: 3px;
         }
         .video-container {
             position: relative;
@@ -80,8 +117,8 @@
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 16px; /* Cantos mais arredondados */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Sombra mais suave e profunda */
         }
         .video-container iframe {
             position: absolute;
@@ -91,41 +128,51 @@
             height: 100%;
             border: 0;
         }
+        .accordion-item {
+            border: 1px solid #dee2e6;
+            border-radius: 15px; /* Cantos mais arredondados */
+            margin-bottom: 1.2rem; /* Mais espaço entre itens */
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra sutil para cada item */
+            transition: transform 0.2s ease;
+        }
+        .accordion-item:hover {
+            transform: translateY(-3px); /* Leve elevação no hover */
+        }
         .accordion-header {
-            background-color: #e0f2fe; /* Azul claro para cabeçalhos */
-            color: #007bff; /* Azul mais escuro para texto */
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
+            background: linear-gradient(90deg, #e9f5ff 0%, #d0e8ff 100%); /* Gradiente suave */
+            color: #0056b3;
+            padding: 1.5rem 2.5rem; /* Mais padding */
+            border-radius: 15px; /* Cantos arredondados */
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         .accordion-header:hover {
-            background-color: #cce7ff;
+            background: linear-gradient(90deg, #d0e8ff 0%, #b3d9ff 100%); /* Gradiente mais escuro no hover */
+            color: #004085;
         }
         .accordion-content {
-            padding: 1rem 1.5rem;
-            background-color: #f8fafd; /* Azul muito claro para conteúdo */
-            border-radius: 8px;
-            margin-top: -0.5rem; /* Sobrepor com o cabeçalho para um visual suave */
-            overflow: hidden;
+            padding: 0 2.5rem;
+            background-color: #fefefe;
+            border-top: 1px solid #e9ecef;
             max-height: 0;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-            opacity: 0; /* Começa invisível */
-            transform: translateY(-10px); /* Começa um pouco acima */
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.3s ease-in, transform 0.3s ease-in;
+            overflow: hidden;
+            transition: max-height 0.7s ease-out, padding 0.7s ease-out, opacity 0.5s ease-in;
+            opacity: 0;
         }
         .accordion-content.active {
-            max-height: 1000px; /* Ajustar conforme necessário para o comprimento do conteúdo */
-            padding: 1rem 1.5rem;
+            max-height: 1200px; /* Ajustar conforme necessário */
+            padding: 2rem 2.5rem; /* Mais padding vertical quando ativo */
             opacity: 1;
-            transform: translateY(0);
         }
         .arrow {
+            font-size: 1.8rem; /* Ícone maior */
             transition: transform 0.3s ease;
         }
         .arrow.rotate {
@@ -134,52 +181,127 @@
         .profile-columns {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2.5rem; /* Mais espaço entre colunas */
+            justify-content: center;
         }
         .profile-column {
-            flex: 1 1 calc(50% - 0.75rem); /* Duas colunas em desktop, uma em mobile */
-            min-width: 300px; /* Garante que não fiquem muito estreitas */
+            flex: 1 1 calc(50% - 1.25rem);
+            min-width: 350px; /* Largura mínima maior */
+            background-color: #f8fafd;
+            padding: 2rem; /* Mais padding */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra mais definida */
+            border: 1px solid #e0e2e6; /* Borda sutil */
+        }
+        .profile-column h3 {
+            color: #0056b3;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem; /* Título de coluna maior */
+            font-weight: 700;
         }
         .team-photos {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.8rem; /* Mais espaço entre fotos */
             justify-content: center;
-            margin-top: 1.5rem;
+            margin-top: 2.5rem;
         }
         .team-member {
             text-align: center;
+            flex-shrink: 0;
         }
         .team-member img {
-            width: 80px;
-            height: 80px;
+            width: 100px; /* Fotos ainda maiores */
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #1a73e8;
+            border: 5px solid #1a73e8; /* Borda mais grossa */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .team-member img:hover {
+            transform: scale(1.1); /* Efeito de zoom no hover */
+            border-color: #28a745; /* Borda verde no hover */
         }
         .team-member p {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 1.05rem;
+            margin-top: 0.8rem;
             font-weight: 500;
+            color: #555;
         }
         .deadline-highlight {
-            background-color: #ffeb3b; /* Amarelo para destaque */
-            color: #333;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 1.25rem;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            font-size: 1.6rem; /* Texto maior */
             font-weight: 700;
             text-align: center;
-            margin-top: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            border: 1px solid #ffeeba;
         }
-        .google-forms-embed {
-            width: 100%;
-            height: 800px; /* Altura ajustável para o formulário */
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        /* Estilos para o botão de exibir o formulário */
+        .show-form-button {
+            background-color: #007bff; /* Azul para o botão de exibir */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+            display: inline-block;
             margin-top: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+        .show-form-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        /* Esconde o iframe do formulário por padrão */
+        .google-forms-embed.hidden {
+            display: none;
+        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+            .hero-section {
+                padding: 4rem 1rem;
+            }
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+            .hero-section p {
+                font-size: 1.5rem;
+            }
+            .cta-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.1rem;
+            }
+            .module-title {
+                font-size: 2.2rem;
+            }
+            .profile-columns {
+                flex-direction: column;
+            }
+            .profile-column {
+                min-width: unset;
+                width: 100%;
+            }
+            .accordion-header {
+                padding: 1rem 1.5rem;
+            }
+            .accordion-content.active {
+                padding: 1.2rem 1.5rem;
+            }
+            .google-forms-embed {
+                height: 750px;
+            }
         }
     </style>
 </head>
@@ -187,9 +309,9 @@
     <div class="container">
         <!-- Módulo 1: A Chamada Principal -->
         <section id="top" class="hero-section">
-            <h1 class="text-white">Seja a próxima liderança a transformar a educação em Municupolândia.</h1>
-            <p class="text-white">Vaga exclusiva para alumni Ensina Brasil: Coordenação de Avaliação e Monitoramento na Organização 123.</p>
-            <a href="#formulario-inscricao" class="cta-button no-underline">QUERO LIDERAR ESSA MUDANÇA</a>
+            <h1 class="text-white">Seja a próxima liderança a transformar a educação em Municipolândia.</h1>
+            <p class="text-white">Vaga exclusiva para alumni: Coordenação de Avaliação e Monitoramento na Organização 123.</p>
+            <a href="#formulario-inscricao" class="cta-button">QUERO LIDERAR ESSA MUDANÇA</a>
         </section>
 
         <!-- Módulo 2: O Vídeo de Engajamento -->
@@ -212,7 +334,7 @@
                         <span class="arrow text-xl">▶</span>
                     </div>
                     <div class="accordion-content">
-                        <p>Esta não é apenas uma vaga, é uma missão. Você será a pessoa responsável por traduzir dados complexos em estratégias pedagógicas claras e acionáveis, que impactarão diretamente a aprendizagem de milhares de alunos na rede pública de Municípolândia.</p>
+                        <p>Esta não é apenas uma oportunidade de trabalho, *é uma missão*. Você será a pessoa responsável por *traduzir dados complexos em estratégias pedagógicas claras e acionáveis*, que impactarão diretamente a aprendizagem de milhares de alunos na rede pública de Municipolândia.</p>
                         <p class="mt-2">Sua atuação será crucial na gestão de projetos de avaliação e monitoramento, liderando uma equipe dedicada e articulando-se com as escolas para garantir que as informações se transformem em melhorias concretas. Buscamos alguém que veja além dos números, que entenda as realidades do chão da escola e que esteja pronto(a) para ser um(a) agente de transformação.</p>
                     </div>
                 </div>
@@ -227,23 +349,23 @@
                         <p class="font-semibold">Nossa Missão:</p>
                         <p>Promover a equidade e a excelência na educação pública, garantindo que cada aluno tenha acesso a um ensino de qualidade.</p>
                         <p class="font-semibold mt-4">Nosso Impacto:</p>
-                        <ul class="list-disc list-inside space-y-1">
-                            <li>**+15.000 alunos** impactados diretamente em Municípolândia.</li>
+                        <ul class="list-disc list-inside space-y-1 ml-4">
+                            <li>**+15.000 alunos** impactados diretamente em Municipolândia.</li>
                             <li>**+50 escolas** parceiras com melhorias em indicadores de aprendizagem.</li>
                             <li>**+100% de crescimento** em projetos de avaliação nos últimos 2 anos.</li>
                         </ul>
                         <p class="font-semibold mt-4">Conheça a Equipe:</p>
                         <div class="team-photos">
                             <div class="team-member">
-                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 1">
+                                <img src="https://placehold.co/100x100/e0f2fe/1a73e8?text=Ana" alt="Membro da Equipe 1">
                                 <p>Ana Silva<br>Gerente Pedagógica</p>
                             </div>
                             <div class="team-member">
-                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 2">
+                                <img src="https://placehold.co/100x100/e0f2fe/1a73e8?text=Bruno" alt="Membro da Equipe 2">
                                 <p>Bruno Costa<br>Especialista em Dados</p>
                             </div>
                             <div class="team-member">
-                                <img src="https://placehold.co/80x80/cccccc/333333?text=Foto" alt="Membro da Equipe 3">
+                                <img src="https://placehold.co/100x100/e0f2fe/1a73e8?text=Carla" alt="Membro da Equipe 3">
                                 <p>Carla Dias<br>Analista de Projetos</p>
                             </div>
                             <!-- Adicione mais membros conforme necessário -->
@@ -261,7 +383,7 @@
                         <div class="profile-columns">
                             <div class="profile-column">
                                 <h3 class="font-bold text-lg mb-2 text-blue-700">Suas Ferramentas:</h3>
-                                <ul class="list-disc list-inside space-y-1">
+                                <ul class="list-disc list-inside space-y-1 ml-4">
                                     <li>Licenciatura completa.</li>
                                     <li>Experiência comprovada com gestão de pessoas e liderança de equipes.</li>
                                     <li>Familiaridade e experiência com processos de avaliação educacional ou análise de dados.</li>
@@ -270,7 +392,7 @@
                             </div>
                             <div class="profile-column">
                                 <h3 class="font-bold text-lg mb-2 text-blue-700">Sua Visão de Mundo:</h3>
-                                <ul class="list-disc list-inside space-y-1">
+                                <ul class="list-disc list-inside space-y-1 ml-4">
                                     <li>Compromisso inegociável com a equidade e a educação pública de qualidade.</li>
                                     <li>Pensamento crítico aguçado e foco em resultados.</li>
                                     <li>Habilidade de articulação e comunicação eficaz com diferentes áreas e stakeholders.</li>
@@ -281,6 +403,21 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Módulo 5: Chamada Final para Ação (com Formulário) -->
+        <section id="formulario-inscricao" class="module-section text-center">
+            <h2 class="module-title">Sua Contribuição Faz a Diferença!</h2>
+            <div class="deadline-highlight mb-8">
+                Inscrições se encerram em [Data Limite: DD/MM/AAAA]!
+            </div>
+
+            <!-- Botão para exibir o formulário -->
+            <button id="showFormBtn" class="show-form-button">Preencher Formulário de Inscrição</button>
+
+            <h3 id="formTitle" class="text-2xl font-bold text-gray-800 mb-4 mt-8 hidden">Preencha o Formulário de Inscrição Abaixo:</h3>
+            <!-- Incorporar o Google Forms aqui -->
+            <iframe id="googleFormIframe" src="https://forms.gle/HQxFb6FXomvHDWke9" class="google-forms-embed hidden" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
         </section>
 
         <!-- Módulo 4: FAQ Dinâmico -->
@@ -333,27 +470,12 @@
                     </div>
                 </div>
                 <div class="text-center mt-6">
-                    <p class="text-lg font-semibold">Não encontrou sua dúvida?</p>
-                    <a href="mailto:[seu-email-de-contato@ensinabrasil.org]?subject=Dúvida%20Vaga%20Coordenação%20Avaliação%20Organização%20123" class="cta-button bg-blue-600 hover:bg-blue-700 no-underline">
+                    <p class="text-lg font-semibold text-gray-700">Não encontrou sua dúvida?</p>
+                    <a href="https://wa.me/5519981851435?text=Olá!%20gostaria%20de%20esclarecer%20uma%20dúvida%20sobre%20o%20ProSel%20da%20organização%20123" class="cta-button bg-blue-600 hover:bg-blue-700">
                         CLIQUE AQUI E FALE CONOSCO
                     </a>
                 </div>
             </div>
-        </section>
-
-        <!-- Módulo 5: Chamada Final para Ação -->
-        <section id="formulario-inscricao" class="module-section text-center">
-            <h2 class="module-title">Sua Contribuição Faz a Diferença!</h2>
-            <p class="text-lg text-gray-700 mb-4">
-                Buscamos ativamente construir um setor público com a cara do Brasil. Candidaturas de **pessoas negras e indígenas são especialmente bem-vindas** para esta posição de liderança.
-            </p>
-            <div class="deadline-highlight mb-8">
-                Inscrições se encerram em [Data Limite: DD/MM/AAAA]!
-            </div>
-
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Preencha o Formulário de Inscrição Abaixo:</h3>
-            <!-- Incorporar o Google Forms aqui -->
-            <iframe src="[LINK_DO_SEU_GOOGLE_FORMS_PARA_EMBUTIR]" class="google-forms-embed" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
         </section>
 
         <footer class="text-center text-gray-500 text-sm mt-8 py-4 border-t border-gray-200">
@@ -387,6 +509,16 @@
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+
+        // Lógica para exibir/ocultar o formulário
+        document.getElementById('showFormBtn').addEventListener('click', function() {
+            const formIframe = document.getElementById('googleFormIframe');
+            const formTitle = document.getElementById('formTitle');
+            this.classList.add('hidden'); // Esconde o botão
+            formTitle.classList.remove('hidden'); // Mostra o título do formulário
+            formIframe.classList.remove('hidden'); // Mostra o iframe do formulário
+            formIframe.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Rola para o formulário
         });
     </script>
 </body>
